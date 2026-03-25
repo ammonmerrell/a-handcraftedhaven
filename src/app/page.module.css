@@ -1,0 +1,236 @@
+:root {
+  --primary-bg-color: #C2DEF9;
+  --primary-text-color: #092948;
+  --secondary-bg-color: #184709;
+  --secondary-text-color: #FFF9E0;
+}
+
+body {
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+  text-align: center;
+  /* This is for the paragraphs */
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.quintessential {
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 50px;
+}
+
+.fascinate {
+  font-family: "Fascinate", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.picture {
+  margin-bottom: 50px;
+}
+
+.underlying {
+  font-size: 10px;
+  font-family: "Fascinate", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ********************* */
+
+/* pasted styles.css page from  team meeting:*/
+
+
+/* <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Oswald:wght@200..700&family=Quintessential&display=swap%22 rel="stylesheet"> */
+ 
+ 
+ 
+/* :root {
+    --primary-bg-color: #C2DEF9;
+    --primary-text-color: #092948;
+    --secondary-bg-color: #184709;
+    --secondary-text-color: #FFF9E0;
+}
+
+ 
+.quintessential-regular {
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+.fascinate-regular {
+  font-family: "Fascinate", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+ 
+.oswald-700 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.page { 
+  color:var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+} */
+
+/* ***************************** */
+
+/* .page {
+  --background: #C2DEF9;
+  --foreground: #184709;
+
+  --text-primary: #092948;
+  --text-secondary: #FFF9E0;
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+  --button-secondary-border: #ebebeb;
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-geist-sans);
+  background-color: var(--background);
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 800px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: var(--foreground);
+  padding: 120px 60px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px;
+}
+
+.intro h1 {
+  max-width: 320px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  letter-spacing: -2.4px;
+  text-wrap: balance;
+  color: var(--text-primary);
+}
+
+.intro p {
+  max-width: 440px;
+  font-size: 18px;
+  line-height: 32px;
+  text-wrap: balance;
+  color: var(--text-secondary);
+}
+
+.intro a {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.ctas {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 440px;
+  gap: 16px;
+  font-size: 14px;
+}
+
+.ctas a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 128px;
+  border: 1px solid transparent;
+  transition: 0.2s;
+  cursor: pointer;
+  width: fit-content;
+  font-weight: 500;
+}
+
+a.primary {
+  background: var(--text-primary);
+  color: var(--background);
+  gap: 8px;
+}
+
+a.secondary {
+  border-color: var(--button-secondary-border);
+} */
+
+/* Enable hover only on non-touch devices */
+/* @media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 48px 24px;
+  }
+
+  .intro {
+    gap: 16px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.92px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .logo {
+    filter: invert();
+  }
+
+  .page {
+    --background: #000;
+    --foreground: #000;
+
+    --text-primary: #ededed;
+    --text-secondary: #999;
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+    --button-secondary-border: #1a1a1a;
+  }
+} */ 

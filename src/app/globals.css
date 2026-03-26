@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -46,7 +46,7 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
 
 /* styles page from our meeting: */
 
@@ -54,11 +54,11 @@ a {
 
 /* <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Oswald:wght@200..700&family=Quintessential&display=swap%22 rel="stylesheet"> */
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Oswald:wght@200..700&family=Quintessential&display=swap%22 rel="stylesheet">  */
+  
  
  
- 
-/* :root {
+ :root {
     --primary-bg-color: #C2DEF9;
     --primary-text-color: #092948;
     --secondary-bg-color: #184709;
@@ -82,4 +82,4 @@ a {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
-} */
+}

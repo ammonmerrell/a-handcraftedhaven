@@ -12,7 +12,7 @@ const sellers = [
 const products = [
   {
     id: 'd6e15727-9fe1-4961-8c5b-ea44a9bd81aa',
-    name: 'Evil Rabbit',
+    name: 'Yellow Flower',
     description: 'a yarn flower',
     image_url: '/products/single-handmade-pot.avif',
     price: '2000',

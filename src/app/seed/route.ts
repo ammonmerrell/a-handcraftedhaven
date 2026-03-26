@@ -72,7 +72,7 @@ async function seedProducts() {
   const insertedProducts = await Promise.all(
     products.map(
       (product) => sql`
-        INSERT INTO customers (id, name, description, image_url, price, tage)
+        INSERT INTO products (id, name, description, image_url, price, tage)
         VALUES (${product.id}, ${product.name}, ${product.description}, ${product.image_url}, ${product.price}, ${product.tags})
         ON CONFLICT (id) DO NOTHING;
       `,

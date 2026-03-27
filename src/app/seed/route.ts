@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import postgres from 'postgres';
-import { sellers, products, creatorInfo, buyers } from '../lib/placeholder-data';
+import { sellers, products, review, buyers } from '../lib/placeholder-data';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -11,7 +11,8 @@ async function seedSellers() {
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
       email VARCHAR(255) NOT NULL,
-      password TEXT NOT NULL
+      password TEXT NOT NULL,
+      story TEXT
     );
   `;
 
@@ -29,30 +30,40 @@ async function seedSellers() {
   return insertedSellers;
 }
 
-async function seedCreatorInfo() {
+async function seedReview() {
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
   await sql`
-    CREATE TABLE IF NOT EXISTS creatorInfo (
+    CREATE TABLE IF NOT EXISTS review (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      customer_id UUID NOT NULL,
-      amount INT NOT NULL,
-      status VARCHAR(255) NOT NULL,
-      date DATE NOT NULL
-    );
+      product_id UUID NOT NULL);
   `;
 
-  const insertedcreatorInfo = await Promise.all(
-    creatorInfo.map(
+    await sql`
+    ALTER TABLE "review"
+ADD COLUMN "rating" rating;
+  `;
+  await sql`
+    ALTER TABLE "review"
+ADD COLUMN "feedback" text NOT NULL;
+  `;
+  await sql`
+    ALTER TABLE "review"
+ADD COLUMN "date" date NOT NULL;
+  `;
+  
+
+  const insertedReview = await Promise.all(
+    review.map(
       (sellers) => sql`
-        INSERT INTO creatorInfo (customer_id, amount, status, date)
+        INSERT INTO review (customer_id, amount, status, date)
         VALUES (${sellers.customer_id}, ${sellers.amount}, ${sellers.status}, ${sellers.date})
         ON CONFLICT (id) DO NOTHING;
       `,
     ),
   );
 
-  return insertedcreatorInfo;
+  return insertedReview;
 }
 
 async function seedProducts() {
@@ -109,7 +120,7 @@ export async function GET() {
   try {
     const result = await sql.begin((sql) => [
       seedSellers(),
-      seedCreatorInfo(),
+      seedReview(),
       seedProducts(),
       seedBuyers(),
     ]);

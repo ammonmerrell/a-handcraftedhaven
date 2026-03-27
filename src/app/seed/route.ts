@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import postgres from 'postgres';
-import { sellers, products, review, buyers } from '../lib/placeholder-data';
+import { sellers, products, review } from '../lib/placeholder-data';
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
@@ -93,36 +93,14 @@ async function seedProducts() {
   return insertedProducts;
 }
 
-async function seedBuyers() {
-  await sql`
-    CREATE TABLE IF NOT EXISTS buyers (
-      id VARCHAR(4) NOT NULL UNIQUE,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL,
-      password TEXT NOT NULL
-    );
-  `;
 
-  const insertedBuyers = await Promise.all(
-    buyers.map(
-      (buyers) => sql`
-        INSERT INTO revenue (id, name, email, password)
-        VALUES (${buyers.id}, ${buyers.name},${buyers.email},${buyers.password})
-        ON CONFLICT (id) DO NOTHING;
-      `,
-    ),
-  );
-
-  return insertedBuyers;
-}
 
 export async function GET() {
   try {
     const result = await sql.begin((sql) => [
       seedSellers(),
       seedReview(),
-      seedProducts(),
-      seedBuyers(),
+      seedProducts()
     ]);
 
     return Response.json({ message: 'Database seeded successfully' });

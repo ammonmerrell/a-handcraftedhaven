@@ -20,8 +20,8 @@ async function seedSellers() {
     sellers.map(async (sellers) => {
       const hashedPassword = await bcrypt.hash(sellers.password, 10);
       return sql`
-        INSERT INTO sellers (id, name, email, password)
-        VALUES (${sellers.id}, ${sellers.name}, ${sellers.email}, ${hashedPassword})
+        INSERT INTO sellers (id, name, email, password, story)
+        VALUES (${sellers.id}, ${sellers.name}, ${sellers.email}, ${hashedPassword}, ${sellers.story})
         ON CONFLICT (id) DO NOTHING;
       `;
     }),
@@ -56,8 +56,8 @@ ADD COLUMN "date" date NOT NULL;
   const insertedReview = await Promise.all(
     review.map(
       (sellers) => sql`
-        INSERT INTO review (customer_id, amount, status, date)
-        VALUES (${sellers.customer_id}, ${sellers.amount}, ${sellers.status}, ${sellers.date})
+        INSERT INTO review (id, product_id, rating, date)
+        VALUES (${sellers.id}, ${sellers.product_id}, ${sellers.rating}, ${sellers.date})
         ON CONFLICT (id) DO NOTHING;
       `,
     ),
@@ -83,7 +83,7 @@ async function seedProducts() {
   const insertedProducts = await Promise.all(
     products.map(
       (product) => sql`
-        INSERT INTO products (id, name, description, image_url, price, tage)
+        INSERT INTO products (id, name, description, image_url, price, tags)
         VALUES (${product.id}, ${product.name}, ${product.description}, ${product.image_url}, ${product.price}, ${product.tags})
         ON CONFLICT (id) DO NOTHING;
       `,

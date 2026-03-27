@@ -6,7 +6,7 @@ const sellers = [
     name: 'Seller',
     email: 'seller@nextmail.com',
     password: '456789',
-  },
+  }
 ];
 
 const products = [

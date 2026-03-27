@@ -5,7 +5,7 @@ const sellers = [
     id: '410544b2-4001-4271-9855-fec4b6a6442a',
     name: 'Seller',
     email: 'seller@nextmail.com',
-    password: '456789',
+    password: '123456',
   }
 ];
 
@@ -20,22 +20,16 @@ const products = [
   }
 ];
 
-const creatorInfo = [
+const review = [
   {
-    customer_id: products[0].id,
-    amount: 15795,
-    status: 'pending',
-    date: '2022-12-06',
+    id: 'd6e14827-9fe1-4961-8c5b-ea44a9bd81bb',
+    product_id: products[0].id,
+    rating: '5',
+    feedback: 'This flower is made of the highest quality and has that handmade charm, 5 of 5!',
+    date: '2026-03-06',
   }
 ];
 
-const buyers = [
-    {
-    id: '412222a1-4001-4271-9855-fec4b6a6442a',
-    name: 'fred',
-    email: 'fred@nextmail.com',
-    password: '123456',
-    }
-];
 
-export { sellers, products, creatorInfo, buyers };
+
+export { sellers, products, review };

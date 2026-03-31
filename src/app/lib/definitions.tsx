@@ -10,6 +10,15 @@ export type sellers = {
   story: string;
 };
 
+export type product = {
+  id: string;
+  name: string;
+  description: string;
+  image_url: string;
+  price: number;
+  tags: string;
+};
+
 export type review = {
   id: string;
   product_id: string;

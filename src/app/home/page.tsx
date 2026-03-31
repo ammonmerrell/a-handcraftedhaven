@@ -2,8 +2,9 @@ import { Card } from '../ui/cards'
 import styles from "../page.module.css"
 import ProductChart from '../ui/revinue-chart';
 import LatestInvoices from '../ui/latest-invoices';
-import { quintessential } from '../page.module.css';
+import {  } from '../page.module.css';
 import { fetchProduct } from '../lib/data';
+import { quintessential } from '../ui/fonts';
 // import { fetchLatestInvoices } from '../lib/data';
  
 export default async function Page() {
@@ -25,7 +26,7 @@ export default async function Page() {
         /> */}
       </div>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <ProductChart products={product}  />
+        <ProductChart />
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
     </main>

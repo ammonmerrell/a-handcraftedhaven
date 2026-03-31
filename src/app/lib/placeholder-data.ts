@@ -6,6 +6,7 @@ const sellers = [
     name: 'Seller',
     email: 'seller@nextmail.com',
     password: '123456',
+    story: 'A seller of handmade goods.'
   }
 ];
 

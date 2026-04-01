@@ -1,8 +1,7 @@
 import { Card } from '../ui/cards'
-import styles from "../page.module.css"
 import ProductChart from '../ui/revinue-chart';
 import LatestInvoices from '../ui/latest-invoices';
-import {  } from '../page.module.css';
+import {  } from '../../app/page';
 import { fetchProduct } from '../lib/data';
 import { quintessential } from '../ui/fonts';
 // import { fetchLatestInvoices } from '../lib/data';

@@ -1,4 +1,4 @@
-import Form from '@/app/ui/edit-form';
+// import Form from '@/app/ui/edit-form';
 import Breadcrumbs from '@/app/ui/breadcrumbs';
 import { fetchCustomers, fetchInvoiceById } from '@/app/lib/data';
  
@@ -22,7 +22,7 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
           },
         ]}
       />
-      <Form invoice={invoice} customers={customers} />
+      {/* <Form invoice={invoice} customers={customers} /> */}
     </main>
   );
 }

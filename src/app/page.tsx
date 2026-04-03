@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import { Quintessential, Oswald, Fascinate } from "next/font/google";
+import Link from "next/link";
 
 const quintessential = Quintessential({
   weight: ['400'],
@@ -41,6 +42,16 @@ export default function Home() {
         <p className={styles.underlying}>(These items can only be sold after they have 
         been created. Also a portion of the profits will be going to us
         after everythings said and done.)</p>
+        <div className={styles.link}>
+        <Link href="/single-item">
+          Today's Item
+        </Link>
+        <span className={styles.linkDivider}>|</span>
+        <Link href="/many-items">
+          Our Products
+        </Link>
+        
+      </div>
     </main>
   );
 }

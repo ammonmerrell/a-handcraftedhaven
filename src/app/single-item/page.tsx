@@ -1,11 +1,11 @@
 import { Card } from '../ui/cards'
-import ProductChart from '../ui/revinue-chart';
+// import ProductChart from '../ui/revinue-chart';
 import LatestInvoices from '../ui/latest-invoices';
 import {  } from '../page';
 import { fetchProduct } from '../lib/data';
 import { quintessential } from '../ui/fonts';
 import { fetchLatestInvoices } from '../lib/data';
- 
+import { ProductItem } from '../ui/revinue-chart';
 export default async function Page() {
     const product = await fetchProduct();
     //   const latestInvoices = await fetchLatestInvoices();
@@ -15,7 +15,7 @@ export default async function Page() {
         Dashboard
       </h1> */}
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <ProductChart />
+        <ProductItem />
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
     </main>

@@ -1,13 +1,15 @@
-import { Card } from '../ui/cards'
-// import ProductChart from '../ui/revinue-chart';
-import LatestInvoices from '../ui/latest-invoices';
-import {  } from '../page';
-import { fetchProduct } from '../lib/data';
-import { quintessential } from '../ui/fonts';
-import { fetchLatestInvoices } from '../lib/data';
-import { ProductItem } from '../ui/revinue-chart';
-export default async function Page() {
-    const product = await fetchProduct();
+import { Card } from '@/app/ui/cards'
+// import ProductChart from '@/app/ui/revinue-chart';
+import LatestInvoices from '@/app/ui/latest-invoices';
+import {  } from '@/app/page';
+import { fetchItem, fetchProduct } from '@/app/lib/data';
+import { quintessential } from '@/app/ui/fonts';
+import { fetchLatestInvoices } from '@/app/lib/data';
+import ProductChart from '@/app/ui/revinue-chart';
+
+
+export default async function Page(id: string) {
+    // const product = await fetchItem(id);
     //   const latestInvoices = await fetchLatestInvoices();
   return (
     <main>
@@ -15,7 +17,7 @@ export default async function Page() {
         Dashboard
       </h1> */}
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <ProductItem />
+        <ProductChart />
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
     </main>

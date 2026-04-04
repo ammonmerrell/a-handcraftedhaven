@@ -2,7 +2,7 @@ import { generateYAxis } from '@/app/lib/utils';
 // import { CalendarIcon } from '@heroicons/react/24/outline';
 // import { lusitana } from '@/app/ui/fonts';
 import { product } from '@/app/lib/definitions';
-import { fetchProduct } from '@/app/lib/data';
+import { fetchProduct, fetchItem } from '@/app/lib/data';
 import styles from '../page.module.css'
 import Link from 'next/link';
 

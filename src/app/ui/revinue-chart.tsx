@@ -47,7 +47,10 @@ export default async function ProductChart() {
                 <span className={styles.artist}>{month.description}</span>
                 <p className="{styles.price}">${month.price}</p>    
                 <p>{month.tags}</p>   
-                <Link href={`view/${month.id}`}>{month.name}</Link>   
+                <Link href={`view/${month.id}`}
+                // onNavigate={(e) => {fetchItem(`${month.id}`)}}
+                >{month.name}</Link>   
+                
             </div>
           ))}
         </div>
@@ -60,8 +63,8 @@ export default async function ProductChart() {
   );
 }
 
-export  async function ProductItem() { 
-  const product = await fetchProduct(); 
+export  async function ProductItem(id: string) { 
+  const product = await fetchItem(id); 
 
   const chartHeight = 350;
   // NOTE: Uncomment this code in Chapter 7

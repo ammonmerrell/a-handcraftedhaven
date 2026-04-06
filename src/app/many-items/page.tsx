@@ -5,8 +5,20 @@ import {  } from '../page';
 import { fetchProduct } from '../lib/data';
 import { quintessential } from '../ui/fonts';
 import { fetchLatestInvoices } from '../lib/data';
- 
-export default async function Page() {
+import Search from '../ui/search'
+import { Suspense } from 'react';
+import  Table  from '@/app/ui/table';
+
+
+export default async function Page(props: {
+  searchParams?: Promise<{
+    query?: string;
+    // page?: string;
+  }>;
+}) {
+  const searchParams = await props.searchParams;
+  const query = searchParams?.query || '';
+  // const currentPage = Number(searchParams?.page) || 1;
     const product = await fetchProduct();
     //   const latestInvoices = await fetchLatestInvoices();
   return (
@@ -16,8 +28,12 @@ export default async function Page() {
       </h1> */}
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <ProductChart />
+        <search />
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
+      {/* <Suspense key={query + currentPage}> */}
+        {/* <Table query={query}  /> */}
+      {/* </Suspense> */}
     </main>
   );
 }

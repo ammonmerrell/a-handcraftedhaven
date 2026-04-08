@@ -7,9 +7,18 @@ import { quintessential } from '@/app/ui/fonts';
 import { fetchLatestInvoices } from '@/app/lib/data';
 import ProductChart from '@/app/ui/revinue-chart';
 
+// export default async function Page(id: string) {
+  
+export default async function Page(props: {params: Promise<{ id: string }> }) {
+  const params = await props.params;
+  const id= params.id;
+  const [invoice ] = await Promise.all([
+    fetchItem(id),
+    // fetchCustomers(),
+  ]);
 
-export default async function Page(id: string) {
-    // const product = await fetchItem(id);
+
+  // const product = await fetchItem(id);
     //   const latestInvoices = await fetchLatestInvoices();
   return (
     <main>

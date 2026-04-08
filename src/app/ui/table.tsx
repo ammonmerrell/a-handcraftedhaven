@@ -8,11 +8,12 @@ export default async function Table({
 //   currentPage: number;
 }) {
   const item = await fetchItem(query);
+  return(
   <div className="md:hidden">
             {item?.map((invoice) => (
               <div
                 key={invoice.id}
                 className="mb-2 w-full rounded-md bg-white p-4"
               ></div>))},
-              </div>
+              </div>)
 }

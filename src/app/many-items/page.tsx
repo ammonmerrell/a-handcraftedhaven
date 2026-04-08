@@ -26,9 +26,11 @@ export default async function Page(props: {
       {/* <h1 className={`${quintessential} mb-4 text-xl md:text-2xl`}>
         Dashboard
       </h1> */}
+      <Search />
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
         <ProductChart />
-        <search />
+        
+        
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
       {/* <Suspense key={query + currentPage}> */}

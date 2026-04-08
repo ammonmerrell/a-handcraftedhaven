@@ -33,9 +33,9 @@ export default async function Page(props: {
         
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
-      {/* <Suspense key={query + currentPage}> */}
-        {/* <Table query={query}  /> */}
-      {/* </Suspense> */}
+      {/* <Suspense key={query}>
+        <Table query={query}  />
+      </Suspense> */}
     </main>
   );
 }

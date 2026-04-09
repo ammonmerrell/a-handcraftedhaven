@@ -1,5 +1,5 @@
 import { fetchItem, fetchProduct } from "../lib/data";
-import { ProductItem } from "./revinue-chart";
+import ProductChart, { ProductItem } from "./revinue-chart";
 
 export default async function Table({
   query
@@ -8,7 +8,8 @@ export default async function Table({
   query: string;
 //   currentPage: number;
 }) {
-  // console.log("query is "+query)
+  if(query.length==36){
+    // console.log("query is "+query)
   const item = await fetchItem(query);
   const thing =item[0]
   // console.log("thig is "+thing.name)
@@ -45,4 +46,9 @@ export default async function Table({
             </div>
             </div>
             )
+} else{
+  return(
+  <ProductChart />
+  )
 }
+} 

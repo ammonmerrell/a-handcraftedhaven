@@ -35,6 +35,7 @@ export default async function Page(props: {
       </div>
       <Suspense key={query}>
         <Table query={'a6ce0b20-2803-4f14-bcf8-a64da4998f06'}  />
+        {/* <Table query={query}  /> */}
       </Suspense>
     </main>
   );

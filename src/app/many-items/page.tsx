@@ -28,14 +28,14 @@ export default async function Page(props: {
       </h1> */}
       <Search placeholder=''/>
       <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <ProductChart />
+        {/* <ProductChart /> */}
         
         
         {/* <LatestInvoices latestInvoices={latestInvoices} /> */}
       </div>
-      {/* <Suspense key={query}>
-        <Table query={query}  />
-      </Suspense> */}
+      <Suspense key={query}>
+        <Table query={'a6ce0b20-2803-4f14-bcf8-a64da4998f06'}  />
+      </Suspense>
     </main>
   );
 }

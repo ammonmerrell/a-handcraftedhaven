@@ -63,7 +63,8 @@ export default async function ProductChart() {
   );
 }
 
-export  async function ProductItem(id: string) { 
+export  async function ProductItem({
+  id}: { id:string;}){
   const product = await fetchItem(id); 
 
   const chartHeight = 350;

@@ -24,8 +24,12 @@ export async function fetchItem(id: string) {
 
     return data;
   } catch (error) {
-    console.error('Database Error:', error);
-    throw new Error('Failed to fetch product data.');
+    const many = await fetchProduct
+    return (many)
+    
+    
+    // console.error('Database Error:', error);
+    // throw new Error('Failed to fetch product data.');
   }
 }
 

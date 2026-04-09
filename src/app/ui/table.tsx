@@ -8,10 +8,10 @@ export default async function Table({
   query: string;
 //   currentPage: number;
 }) {
-  console.log("query is "+query)
+  // console.log("query is "+query)
   const item = await fetchItem(query);
   const thing =item[0]
-  console.log("thig is "+thing.name)
+  // console.log("thig is "+thing.name)
   return(
     // below is page ripped from product chart
     
